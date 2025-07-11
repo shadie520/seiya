@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 320px;
+    width: 100%;
+}
+
+.display {
+    background-color: #000;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.result {
+    color: #00ff00;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 60px;
+    outline: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn.number {
+    background-color: #fff;
+    color: #333;
+}
+
+.btn.number:hover {
+    background-color: #f0f0f0;
+}
+
+.btn.operator {
+    background-color: #ff9500;
+    color: #fff;
+}
+
+.btn.operator:hover {
+    background-color: #e6850e;
+}
+
+.btn.function {
+    background-color: #a6a6a6;
+    color: #000;
+}
+
+.btn.function:hover {
+    background-color: #999;
+}
+
+.btn.equals {
+    background-color: #ff9500;
+    color: #fff;
+    grid-row: span 2;
+}
+
+.btn.equals:hover {
+    background-color: #e6850e;
+}
+
+.btn.zero {
+    grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    .result {
+        font-size: 24px;
+    }
+    
+    .btn {
+        min-height: 50px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .result {
+        font-size: 20px;
+    }
+    
+    .btn {
+        min-height: 45px;
+        font-size: 14px;
+    }
+    
+    .display {
+        min-height: 50px;
+        padding: 15px;
+    }
+}
